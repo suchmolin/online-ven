@@ -65,26 +65,9 @@
   .hero-stats .n{font-weight:900;color:var(--navy);font-size:26px;letter-spacing:-.5px}
   .hero-stats .l{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.7px;text-transform:uppercase}
 
-  /* zoom mockup */
-  .zoom-mock{
-    background:#0e1340;border-radius:16px;padding:14px;
-    box-shadow:0 30px 80px rgba(15,23,97,.35),0 0 0 1px rgba(255,255,255,.05);
-    transform:rotate(-1deg);
-  }
-  .zoom-bar{display:flex;align-items:center;gap:8px;padding:0 6px 12px}
-  .zoom-bar .dot{width:10px;height:10px;border-radius:50%}
-  .zoom-bar .dot.r{background:#ff5f57}.zoom-bar .dot.y{background:#febc2e}.zoom-bar .dot.g{background:#28c840}
-  .zoom-bar .title{margin-left:auto;color:#9aa0b6;font-size:11px;font-weight:700;letter-spacing:.4px}
-  .zoom-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;height:340px}
-  .tile{position:relative;border-radius:8px;background:repeating-linear-gradient(45deg,#26307a 0 10px,#1d2766 10px 20px);overflow:hidden}
-  .tile.teacher{grid-row:1/3;background:repeating-linear-gradient(45deg,#1e3a8a 0 10px,#172e6e 10px 20px)}
-  .tile .name{position:absolute;left:8px;bottom:6px;color:#fff;font-size:10px;font-weight:800;background:rgba(0,0,0,.4);padding:2px 8px;border-radius:4px}
-  .tile.teacher::after{content:"";position:absolute;top:8px;left:8px;width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
-  .tile.teacher .name{background:var(--green);color:#fff}
-  .tile.you{outline:2px solid var(--green)}
-  .zoom-foot{display:flex;justify-content:center;gap:8px;padding:10px 0 2px}
-  .zoom-foot span{width:30px;height:30px;border-radius:50%;background:#1d2766;display:inline-flex;align-items:center;justify-content:center;color:#9aa0b6}
-  .zoom-foot .end{background:#ef4444;color:#fff}
+  /* hero visual */
+  .hero-visual{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(15,23,97,.28);transform:rotate(-1deg)}
+  .hero-visual img{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover}
   .live-tag{position:absolute;top:18px;left:18px;background:#ef4444;color:#fff;font-size:10px;font-weight:900;letter-spacing:.5px;padding:4px 10px;border-radius:4px;display:inline-flex;align-items:center;gap:6px;z-index:3}
   .live-tag .pulse{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
 
@@ -93,6 +76,7 @@
   .promo-row{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
   .promo-row .left b{color:var(--orange);font-weight:900}
   .promo-row .left .t1{font-weight:900;font-size:18px;letter-spacing:.5px;margin:0}
+  .promo-row .left .t-price{font-weight:800;font-size:14px;color:#fff;margin:6px 0 0;line-height:1.35}
   .promo-row .left .t2{font-weight:800;font-size:13px;color:#bcc3e8;margin:4px 0 0}
   .flip{display:flex;gap:10px}
   .flip .digit{position:relative;width:78px;height:104px;border-radius:10px;background:linear-gradient(180deg,#f7f8fa 0%,#e9ecf1 50%,#f7f8fa 50.1%,#f1f3f6 100%);box-shadow:inset 0 0 0 2px #dfe3ec;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:78px;color:var(--navy);overflow:hidden}
@@ -200,11 +184,8 @@
   .quote .qm{position:absolute;font-size:64px;line-height:1;color:var(--green);font-weight:900;font-family:Georgia,serif}
   .quote .qm.tl{top:-2px;left:14px}
   .quote p{color:var(--navy);font-weight:700;font-size:13.5px;line-height:1.5;margin:18px 0 16px}
-  .quote .who{display:flex;align-items:center;gap:12px}
-  .quote .av{width:42px;height:42px;border-radius:50%;background:repeating-linear-gradient(45deg,#cfd6e2 0 6px,#dde2ec 6px 12px);border:2px solid #fff}
-  .quote .name{color:var(--navy);font-weight:900;font-size:13px}
-  .quote .meta{color:var(--navy);font-weight:700;font-size:11px}
-  .quote .stars{color:var(--orange);font-size:12px;margin-top:2px}
+  .quote .who{margin-top:4px}
+  .quote .name{color:var(--navy);font-weight:900;font-size:13px;letter-spacing:.3px}
 
   /* FAQ */
   .faq{padding:70px 0 50px;background:#f7f9fc}
@@ -313,24 +294,9 @@
         <div class="s"><div class="n">100%</div><div class="l">en vivo, no es app</div></div>
       </div>
     </div>
-    <div style="position:relative">
+    <div class="hero-visual">
       <span class="live-tag"><span class="pulse"></span> EN VIVO</span>
-      <div class="zoom-mock">
-        <div class="zoom-bar">
-          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-          <span class="title">Fyr Lois · Nivel B1 · Martes 7:00 PM</span>
-        </div>
-        <div class="zoom-grid">
-          <div class="tile teacher"><span class="name">PROF. SARAH (UK)</span></div>
-          <div class="tile"><span class="name">Andrea · Caracas</span></div>
-          <div class="tile you"><span class="name" style="background:var(--green)">Tú · Maracaibo</span></div>
-          <div class="tile"><span class="name">Carlos · Valencia</span></div>
-          <div class="tile"><span class="name">Luis · Mérida</span></div>
-        </div>
-        <div class="zoom-foot">
-          <span>🎙</span><span>📹</span><span>💬</span><span class="end">✕</span>
-        </div>
-      </div>
+      <img src="hero-clase-vivo.png" alt="Clase en vivo Fyr Lois Online — estudiantes conectados por Zoom" width="640" height="400" decoding="async" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -340,6 +306,7 @@
   <div class="wrap promo-row">
     <div class="left">
       <p class="t1"><b>25% OFF</b> · PROMO ONLINE ACTIVA</p>
+      <p class="t-price">$768 o $240 inscripción más 3 pagos de $240</p>
       <p class="t2">PARA LOS PRIMEROS 100 ALUMNOS INSCRITOS</p>
     </div>
     <div class="flip" id="flip">
@@ -545,36 +512,21 @@
         <span class="qm tl">"</span>
         <p>Vivo en Maracaibo y antes ningún instituto serio llegaba acá. Con Fyr Lois Online me conecto desde mi cuarto, paso de A2 a B1 en 4 meses. Mi gerente ya me asigna llamadas con clientes en EEUU.</p>
         <div class="who">
-          <div class="av"></div>
-          <div>
-            <div class="name">ANDREA PITA</div>
-            <div class="meta">MARACAIBO · NIVEL B1</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="name">ANDREA PITA</div>
         </div>
       </div>
       <div class="quote">
         <span class="qm tl">"</span>
         <p>Trabajo turnos en una clínica. Antes era imposible un instituto presencial. Tomo clase online a las 7 AM antes del turno. Nunca falté. Subí dos niveles en un módulo.</p>
         <div class="who">
-          <div class="av"></div>
-          <div>
-            <div class="name">CARLOS MÉNDEZ</div>
-            <div class="meta">VALENCIA · A2 → B2</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="name">CARLOS MÉNDEZ</div>
         </div>
       </div>
       <div class="quote">
         <span class="qm tl">"</span>
         <p>Probé Duolingo, Cambly, dos institutos online random. Nada me hacía hablar. En la primera clase de Fyr Lois la profesora me obligó a presentarme — y desde ahí no paré. La diferencia es real.</p>
         <div class="who">
-          <div class="av"></div>
-          <div>
-            <div class="name">MARÍA FERNÁNDEZ</div>
-            <div class="meta">CARACAS · PROFESIONAL</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div class="name">MARÍA FERNÁNDEZ</div>
         </div>
       </div>
     </div>
